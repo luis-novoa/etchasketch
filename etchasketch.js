@@ -5,7 +5,7 @@ let br = document.createElement('br');
 
 clear.classList.add('clear');
 clear.textContent = 'Clear sketch';
-//clear.addEventListener('click');
+clear.addEventListener('click', newSketch);
 header.appendChild(clear);
 
 function newGrid(num) {
@@ -19,7 +19,13 @@ function newGrid(num) {
 };
 
 function newSketch() {
-    prompt('How many squares per side?');
-}
+    let dim = prompt('How many squares per side?');
+    dim = Number(dim);
+    if (isNaN(dim) == true) {
+        alert('Insert a numeric value!');
+    } else {
+        newGrid(dim);
+    };
+};
 
 newGrid(16);
