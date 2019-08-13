@@ -9,6 +9,7 @@ clear.addEventListener('click', newSketch);
 header.appendChild(clear);
 
 function newGrid(num) {
+    main.innerHTML = '';
     for (let i = 0; i < num*num; i++){
         let gridCell = document.createElement('div');
         gridCell.classList.add('cell');
